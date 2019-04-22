@@ -38,7 +38,7 @@
 >   } 
 > ```
 >
-> ![image-20190422214017810](/Users/changsiteng/IdeaProjects/JavaConcurrent/src/main/resources/image/image-20190422214017810.png)
+> ![image-20190422214017810](src/main/resources/image/image-20190422214017810.png)
 >
 > ```java
 > new Thread(() -> System.out.println("Hello World!"));
