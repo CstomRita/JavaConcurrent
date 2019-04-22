@@ -38,7 +38,7 @@
 >   } 
 > ```
 >
-> ![image-20190421221618546](/Users/changsiteng/Library/Application Support/typora-user-images/image-20190421221618546.png)
+> ![image-20190422214017810](/Users/changsiteng/IdeaProjects/JavaConcurrent/src/main/resources/image/image-20190422214017810.png)
 >
 > ```java
 > new Thread(() -> System.out.println("Hello World!"));
@@ -169,7 +169,7 @@ synchronized锁定的是堆内存中实际实例对象上，并不是栈中引�
 
 如果锁指向的实际对象发生了改变，新的线程将以这个新的对象作为上锁的基准，旧线程已经获取了原先旧对象的锁一直未释放，依然可以运行。此时新旧线程获取的锁不同，<font color=red>**将失去同步效果**</font>。
 
-> ![image-20190422173303652](/Users/changsiteng/Library/Application Support/typora-user-images/image-20190422173303652.png)
+> ![image-20190422214036818](/Users/changsiteng/IdeaProjects/JavaConcurrent/src/main/resources/image/image-20190422214036818.png)
 >
 > 此时两个线程各自获取的已经是各自不同的锁了。
 
@@ -177,7 +177,7 @@ Q：如果更改一下题目，线程A运行时占有锁O，更改O对象，线�
 
 A：只要旧线程将之前的锁释放掉了，再去获取时就需要获取当前o指向的新对象的锁，此时和新线程的锁对象是一致的。
 
-![image-20190422174712546](/Users/changsiteng/Library/Application Support/typora-user-images/image-20190422174712546.png)
+![image-20190422214056310](/Users/changsiteng/IdeaProjects/JavaConcurrent/src/main/resources/image/image-20190422214056310.png)
 
 <font color=red>**对于一个加锁对象，不要修改它的引用，声明为final**</font>
 
@@ -220,7 +220,7 @@ Step4：如何解决notify时想立刻释放锁，而不是等待线程完成再
 
 notify的时候再进行一次wait。
 
-![image-20190422204359104](/Users/changsiteng/Library/Application Support/typora-user-images/image-20190422204359104.png)
+![image-20190422214109819](/Users/changsiteng/IdeaProjects/JavaConcurrent/src/main/resources/image/image-20190422214109819.png)
 
 > 当然还有其他可以立即释放锁的方式，后面在看
 
